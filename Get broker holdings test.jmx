@@ -13,11 +13,11 @@
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
-          <stringProp name="LoopController.loops">1</stringProp>
+          <stringProp name="LoopController.loops">${__P(lCount,1)}</stringProp>
           <boolProp name="LoopController.continue_forever">false</boolProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">1</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <stringProp name="ThreadGroup.num_threads">${__P(noThreads,1)}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${__P(rampUp,1)}</stringProp>
         <boolProp name="ThreadGroup.delayedStart">false</boolProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
@@ -87,18 +87,13 @@ String responseData = prev.getResponseDataAsString();
 
 String regex = &quot;=(.*?)(?=\&quot;)&quot;;
 
-// Compile the regular expression into a Pattern object
 Pattern pattern = Pattern.compile(regex);
-
-// Create a Matcher object to find matches in the input string
 Matcher matcher = pattern.matcher(responseData);
 
 if (matcher.find()) {
-
     String matchedValue = matcher.group(1);
-    log.info(&quot;Matched Value: &quot; + matchedValue);
-    // You can use matchedValue in your script as needed
-    vars.put(&quot;AUTH_CODE&quot;, matchedValue); // Store the value in a JMeter variable if needed
+
+    vars.put(&quot;AUTH_CODE&quot;, matchedValue);
 } else {
     log.error(&quot;No match found.&quot;);
 }</stringProp>
@@ -160,9 +155,9 @@ if (matcher.find()) {
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-    &quot;Type&quot;: &quot;Okx&quot;,&#xd;
-    &quot;AuthToken&quot;: &quot;YTAyY5mU5NzktZjNhOC00NjNjLWr2MmEtZjhjNDlhNTMzMjMx&quot;,&#xd;
-    &quot;Password&quot;: &quot;YTAyYm5U5NzktZjNhOC00NjNjLWIrMmEtZjhjNDlhNTMzMjMx&quot;&#xd;
+    &quot;Type&quot;: &quot;${BrokerType}&quot;,&#xd;
+    &quot;AuthToken&quot;: &quot;${ApiKey}&quot;,&#xd;
+    &quot;Password&quot;: &quot;{ApiSecret}&quot;&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
@@ -208,6 +203,37 @@ if (matcher.find()) {
             <stringProp name="JSONPostProcessor.jsonPathExprs">$.content.brokerAccountTokens[0].accessToken</stringProp>
             <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
           </JSONPostProcessor>
+          <hashTree/>
+          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
+            <collectionProp name="UserParameters.names">
+              <stringProp name="-619855149">BrokerType</stringProp>
+              <stringProp name="1967532549">ApiKey</stringProp>
+              <stringProp name="1571969354">ApiSecret</stringProp>
+            </collectionProp>
+            <collectionProp name="UserParameters.thread_values">
+              <collectionProp name="40578718">
+                <stringProp name="79356">Okx</stringProp>
+                <stringProp name="0"></stringProp>
+                <stringProp name="0"></stringProp>
+              </collectionProp>
+            </collectionProp>
+            <boolProp name="UserParameters.per_iteration">false</boolProp>
+          </UserParameters>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">import org.apache.commons.lang3.RandomStringUtils;
+
+String apiKey = RandomStringUtils.randomAlphanumeric(20); 
+
+log.info(&quot;APIKEY&quot; + apikey);
+
+vars.put(&quot;ApiKey&quot;, apiKey);
+vars.put(&quot;ApiKey&quot;, apiKey);
+</stringProp>
+          </BeanShellPreProcessor>
           <hashTree/>
         </hashTree>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get broker holdings" enabled="true">
@@ -334,12 +360,12 @@ if (matcher.find()) {
             <stringProp name="-1415966382">test_callback</stringProp>
           </collectionProp>
           <collectionProp name="UserParameters.thread_values">
-            <collectionProp name="2042475635">
-              <stringProp name="-1204607085">localhost</stringProp>
-              <stringProp name="49622966">44369</stringProp>
-              <stringProp name="147184696">9DA724ED-FFD2-4C8E-1046-08DB8EAED9FC</stringProp>
-              <stringProp name="-744747660">sk_prod_4almswvi.9swke3j3c4o34jehpocf4i3tp9igtts8ytq4uuxumz68gphdk9e0q16q9e9nar00</stringProp>
-              <stringProp name="1859877692">http://localhost:3006</stringProp>
+            <collectionProp name="-1876468288">
+              <stringProp name="612581025">${__P(test_host,localhost)}</stringProp>
+              <stringProp name="1291763933">${__P(test_port,44369)}</stringProp>
+              <stringProp name="1708964897">${__P(client_d,11)}</stringProp>
+              <stringProp name="-1215871509">${__P(client_secret,aa)}</stringProp>
+              <stringProp name="1408506279">${__P(test_callback,http://localhost:3006)}</stringProp>
             </collectionProp>
           </collectionProp>
           <boolProp name="UserParameters.per_iteration">false</boolProp>
