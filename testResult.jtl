@@ -1,0 +1,199 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1694079666917,34,Get Catalog link request,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,"Non HTTP response message: Connect to localhost:44369 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect",Thread Group 1-1,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[Non HTTP response code: org.apache.http.conn.HttpHostConnectException]]]
+
+****** comparison: [[[200                                                                  ]]]
+
+/",2767,0,1,1,https://localhost:44369/api/v1/cataloglink?userId=323917d0-a05b-480a-b9fa-02ac25437d45&callbackUrl=http://localhost:3006,0,0,34
+1694079666966,4,Exchange authorization code,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,"Non HTTP response message: Connect to localhost:44369 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect",Thread Group 1-1,text,false,,2767,0,1,1,https://localhost:44369/api/v1/auth/exchange,0,0,4
+1694079667009,1,Bet broker token,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,"Non HTTP response message: Connect to localhost:44369 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect",Thread Group 1-1,text,false,Expected to find an object with property ['content'] in path $ but found 'java.lang.String'. This is not a json object according to the JsonProvider: 'com.jayway.jsonpath.spi.json.JsonSmartJsonProvider'.,2767,0,1,1,https://localhost:44369/api/v1/catalog/authenticate,0,0,1
+1694079667016,1,Get broker holdings,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,"Non HTTP response message: Connect to localhost:44369 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect",Thread Group 1-1,text,false,,2767,0,1,1,https://localhost:44369/api/v1/holdings/get,0,0,1
+1694079667019,1,Get Catalog link request,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,"Non HTTP response message: Connect to localhost:44369 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect",Thread Group 1-1,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[Non HTTP response code: org.apache.http.conn.HttpHostConnectException]]]
+
+****** comparison: [[[200                                                                  ]]]
+
+/",2767,0,1,1,https://localhost:44369/api/v1/cataloglink?userId=8a4d4242-cb68-4f4e-b841-d64a1385d630&callbackUrl=http://localhost:3006,0,0,1
+1694079667024,1,Exchange authorization code,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,"Non HTTP response message: Connect to localhost:44369 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect",Thread Group 1-1,text,false,,2767,0,1,1,https://localhost:44369/api/v1/auth/exchange,0,0,1
+1694079667028,2,Bet broker token,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,"Non HTTP response message: Connect to localhost:44369 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect",Thread Group 1-1,text,false,Expected to find an object with property ['content'] in path $ but found 'java.lang.String'. This is not a json object according to the JsonProvider: 'com.jayway.jsonpath.spi.json.JsonSmartJsonProvider'.,2767,0,1,1,https://localhost:44369/api/v1/catalog/authenticate,0,0,2
+1694079667031,2,Get broker holdings,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,"Non HTTP response message: Connect to localhost:44369 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect",Thread Group 1-1,text,false,,2767,0,1,1,https://localhost:44369/api/v1/holdings/get,0,0,2
+1694079667034,2,Get Catalog link request,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,"Non HTTP response message: Connect to localhost:44369 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect",Thread Group 1-1,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[Non HTTP response code: org.apache.http.conn.HttpHostConnectException]]]
+
+****** comparison: [[[200                                                                  ]]]
+
+/",2767,0,1,1,https://localhost:44369/api/v1/cataloglink?userId=c7b11573-a70e-4270-9f31-5aa6af2b88fa&callbackUrl=http://localhost:3006,0,0,2
+1694079667038,2,Exchange authorization code,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,"Non HTTP response message: Connect to localhost:44369 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect",Thread Group 1-1,text,false,,2767,0,1,1,https://localhost:44369/api/v1/auth/exchange,0,0,2
+1694079667043,1,Bet broker token,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,"Non HTTP response message: Connect to localhost:44369 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect",Thread Group 1-1,text,false,Expected to find an object with property ['content'] in path $ but found 'java.lang.String'. This is not a json object according to the JsonProvider: 'com.jayway.jsonpath.spi.json.JsonSmartJsonProvider'.,2767,0,1,1,https://localhost:44369/api/v1/catalog/authenticate,0,0,1
+1694079667045,2,Get broker holdings,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,"Non HTTP response message: Connect to localhost:44369 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect",Thread Group 1-1,text,false,,2767,0,1,1,https://localhost:44369/api/v1/holdings/get,0,0,2
+1694079667089,2,Get Catalog link request,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,"Non HTTP response message: Connect to localhost:44369 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect",Thread Group 1-2,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[Non HTTP response code: org.apache.http.conn.HttpHostConnectException]]]
+
+****** comparison: [[[200                                                                  ]]]
+
+/",2767,0,1,1,https://localhost:44369/api/v1/cataloglink?userId=3f182f3f-c2df-46b4-8254-f0727b974871&callbackUrl=http://localhost:3006,0,0,2
+1694079667094,2,Exchange authorization code,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,"Non HTTP response message: Connect to localhost:44369 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect",Thread Group 1-2,text,false,,2767,0,1,1,https://localhost:44369/api/v1/auth/exchange,0,0,2
+1694079667100,2,Bet broker token,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,"Non HTTP response message: Connect to localhost:44369 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect",Thread Group 1-2,text,false,Expected to find an object with property ['content'] in path $ but found 'java.lang.String'. This is not a json object according to the JsonProvider: 'com.jayway.jsonpath.spi.json.JsonSmartJsonProvider'.,2767,0,1,1,https://localhost:44369/api/v1/catalog/authenticate,0,0,2
+1694079667103,1,Get broker holdings,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,"Non HTTP response message: Connect to localhost:44369 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect",Thread Group 1-2,text,false,,2767,0,1,1,https://localhost:44369/api/v1/holdings/get,0,0,1
+1694079667105,1,Get Catalog link request,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,"Non HTTP response message: Connect to localhost:44369 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect",Thread Group 1-2,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[Non HTTP response code: org.apache.http.conn.HttpHostConnectException]]]
+
+****** comparison: [[[200                                                                  ]]]
+
+/",2767,0,1,1,https://localhost:44369/api/v1/cataloglink?userId=07ab7081-bdad-493f-bdbf-1fac098ccfc7&callbackUrl=http://localhost:3006,0,0,1
+1694079667109,2,Exchange authorization code,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,"Non HTTP response message: Connect to localhost:44369 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect",Thread Group 1-2,text,false,,2767,0,1,1,https://localhost:44369/api/v1/auth/exchange,0,0,2
+1694079667113,2,Bet broker token,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,"Non HTTP response message: Connect to localhost:44369 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect",Thread Group 1-2,text,false,Expected to find an object with property ['content'] in path $ but found 'java.lang.String'. This is not a json object according to the JsonProvider: 'com.jayway.jsonpath.spi.json.JsonSmartJsonProvider'.,2767,0,1,1,https://localhost:44369/api/v1/catalog/authenticate,0,0,2
+1694079667116,1,Get broker holdings,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,"Non HTTP response message: Connect to localhost:44369 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect",Thread Group 1-2,text,false,,2767,0,1,1,https://localhost:44369/api/v1/holdings/get,0,0,1
+1694079667118,1,Get Catalog link request,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,"Non HTTP response message: Connect to localhost:44369 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect",Thread Group 1-2,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[Non HTTP response code: org.apache.http.conn.HttpHostConnectException]]]
+
+****** comparison: [[[200                                                                  ]]]
+
+/",2767,0,1,1,https://localhost:44369/api/v1/cataloglink?userId=b87473b1-df3d-4742-aaca-0ebef15d3fac&callbackUrl=http://localhost:3006,0,0,1
+1694079667121,2,Exchange authorization code,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,"Non HTTP response message: Connect to localhost:44369 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect",Thread Group 1-2,text,false,,2767,0,1,1,https://localhost:44369/api/v1/auth/exchange,0,0,2
+1694079667125,2,Bet broker token,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,"Non HTTP response message: Connect to localhost:44369 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect",Thread Group 1-2,text,false,Expected to find an object with property ['content'] in path $ but found 'java.lang.String'. This is not a json object according to the JsonProvider: 'com.jayway.jsonpath.spi.json.JsonSmartJsonProvider'.,2767,0,1,1,https://localhost:44369/api/v1/catalog/authenticate,0,0,2
+1694079667128,1,Get broker holdings,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,"Non HTTP response message: Connect to localhost:44369 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect",Thread Group 1-2,text,false,,2767,0,1,1,https://localhost:44369/api/v1/holdings/get,0,0,1
+1694079667422,2,Get Catalog link request,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,"Non HTTP response message: Connect to localhost:44369 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect",Thread Group 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[Non HTTP response code: org.apache.http.conn.HttpHostConnectException]]]
+
+****** comparison: [[[200                                                                  ]]]
+
+/",2767,0,1,1,https://localhost:44369/api/v1/cataloglink?userId=39d5435e-0409-4512-b5b4-e158d040b8d4&callbackUrl=http://localhost:3006,0,0,2
+1694079667428,2,Exchange authorization code,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,"Non HTTP response message: Connect to localhost:44369 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect",Thread Group 1-3,text,false,,2767,0,1,1,https://localhost:44369/api/v1/auth/exchange,0,0,2
+1694079667435,2,Bet broker token,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,"Non HTTP response message: Connect to localhost:44369 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect",Thread Group 1-3,text,false,Expected to find an object with property ['content'] in path $ but found 'java.lang.String'. This is not a json object according to the JsonProvider: 'com.jayway.jsonpath.spi.json.JsonSmartJsonProvider'.,2767,0,1,1,https://localhost:44369/api/v1/catalog/authenticate,0,0,2
+1694079667438,1,Get broker holdings,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,"Non HTTP response message: Connect to localhost:44369 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect",Thread Group 1-3,text,false,,2767,0,1,1,https://localhost:44369/api/v1/holdings/get,0,0,1
+1694079667440,0,Get Catalog link request,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,"Non HTTP response message: Connect to localhost:44369 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect",Thread Group 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[Non HTTP response code: org.apache.http.conn.HttpHostConnectException]]]
+
+****** comparison: [[[200                                                                  ]]]
+
+/",2767,0,1,1,https://localhost:44369/api/v1/cataloglink?userId=6c7a1db7-ff68-4d6b-9ec4-fdd7541d15d0&callbackUrl=http://localhost:3006,0,0,0
+1694079667442,1,Exchange authorization code,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,"Non HTTP response message: Connect to localhost:44369 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect",Thread Group 1-3,text,false,,2767,0,1,1,https://localhost:44369/api/v1/auth/exchange,0,0,1
+1694079667444,1,Bet broker token,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,"Non HTTP response message: Connect to localhost:44369 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect",Thread Group 1-3,text,false,Expected to find an object with property ['content'] in path $ but found 'java.lang.String'. This is not a json object according to the JsonProvider: 'com.jayway.jsonpath.spi.json.JsonSmartJsonProvider'.,2767,0,1,1,https://localhost:44369/api/v1/catalog/authenticate,0,0,1
+1694079667446,1,Get broker holdings,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,"Non HTTP response message: Connect to localhost:44369 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect",Thread Group 1-3,text,false,,2767,0,1,1,https://localhost:44369/api/v1/holdings/get,0,0,1
+1694079667449,2,Get Catalog link request,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,"Non HTTP response message: Connect to localhost:44369 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect",Thread Group 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[Non HTTP response code: org.apache.http.conn.HttpHostConnectException]]]
+
+****** comparison: [[[200                                                                  ]]]
+
+/",2767,0,1,1,https://localhost:44369/api/v1/cataloglink?userId=8fb2d5b9-e27f-4998-9242-21d65fd247fe&callbackUrl=http://localhost:3006,0,0,1
+1694079667453,1,Exchange authorization code,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,"Non HTTP response message: Connect to localhost:44369 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect",Thread Group 1-3,text,false,,2767,0,1,1,https://localhost:44369/api/v1/auth/exchange,0,0,1
+1694079667455,1,Bet broker token,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,"Non HTTP response message: Connect to localhost:44369 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect",Thread Group 1-3,text,false,Expected to find an object with property ['content'] in path $ but found 'java.lang.String'. This is not a json object according to the JsonProvider: 'com.jayway.jsonpath.spi.json.JsonSmartJsonProvider'.,2767,0,1,1,https://localhost:44369/api/v1/catalog/authenticate,0,0,1
+1694079667457,1,Get broker holdings,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,"Non HTTP response message: Connect to localhost:44369 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect",Thread Group 1-3,text,false,,2767,0,1,1,https://localhost:44369/api/v1/holdings/get,0,0,1
+1694079880936,5290,Get Catalog link request,200,OK,Thread Group 1-3,text,true,,683,409,3,3,https://localhost:44369/api/v1/cataloglink?userId=e3cc4ab6-b3ea-448a-9cfb-b47ae76b2565&callbackUrl=http://localhost:3006,5126,0,12
+1694079880608,5618,Get Catalog link request,200,OK,Thread Group 1-2,text,true,,683,409,3,3,https://localhost:44369/api/v1/cataloglink?userId=f8c958d2-7f1f-4387-a86d-90c9ec4c5ca1&callbackUrl=http://localhost:3006,5454,0,143
+1694079880450,5776,Get Catalog link request,200,OK,Thread Group 1-1,text,true,,683,409,3,3,https://localhost:44369/api/v1/cataloglink?userId=4ae816c0-6def-457e-9403-0164e6f8c07c&callbackUrl=http://localhost:3006,5612,0,301
+1694079886254,363,Exchange authorization code,200,OK,Thread Group 1-3,text,true,,841,459,3,3,https://localhost:44369/api/v1/auth/exchange,320,0,0
+1694079886254,350,Exchange authorization code,200,OK,Thread Group 1-2,text,true,,841,459,3,3,https://localhost:44369/api/v1/auth/exchange,320,0,0
+1694079886254,352,Exchange authorization code,200,OK,Thread Group 1-1,text,true,,841,459,3,3,https://localhost:44369/api/v1/auth/exchange,320,0,0
+1694079886649,2394,Bet broker token,200,OK,Thread Group 1-2,text,true,,1035,939,3,3,https://localhost:44369/api/v1/catalog/authenticate,2356,0,0
+1694079886649,2410,Bet broker token,200,OK,Thread Group 1-1,text,true,,1035,939,3,3,https://localhost:44369/api/v1/catalog/authenticate,2356,0,0
+1694079886649,2413,Bet broker token,200,OK,Thread Group 1-3,text,true,,1035,939,3,3,https://localhost:44369/api/v1/catalog/authenticate,2356,0,0
+1694079889047,1313,Get broker holdings,200,OK,Thread Group 1-2,text,true,,781,1077,3,3,https://localhost:44369/api/v1/holdings/get,1279,0,0
+1694079889063,1300,Get broker holdings,200,OK,Thread Group 1-3,text,true,,781,1077,3,3,https://localhost:44369/api/v1/holdings/get,1263,0,0
+1694079889060,1331,Get broker holdings,200,OK,Thread Group 1-1,text,true,,781,1077,3,3,https://localhost:44369/api/v1/holdings/get,1266,0,0
+1694079890362,228,Get Catalog link request,200,OK,Thread Group 1-2,text,true,,683,409,3,3,https://localhost:44369/api/v1/cataloglink?userId=8ec4e1c5-2b76-48e9-bb61-ee46e58a72dd&callbackUrl=http://localhost:3006,186,0,0
+1694079890364,230,Get Catalog link request,200,OK,Thread Group 1-3,text,true,,683,409,3,3,https://localhost:44369/api/v1/cataloglink?userId=d9c52751-5e00-405a-9072-997793583f8b&callbackUrl=http://localhost:3006,181,0,0
+1694079890392,224,Get Catalog link request,200,OK,Thread Group 1-1,text,true,,683,409,3,3,https://localhost:44369/api/v1/cataloglink?userId=b957a041-3ea3-4b5e-ab0b-1ed2cdc1117c&callbackUrl=http://localhost:3006,160,0,0
+1694079890594,176,Exchange authorization code,200,OK,Thread Group 1-2,text,true,,841,459,3,3,https://localhost:44369/api/v1/auth/exchange,123,0,0
+1694079890619,154,Exchange authorization code,200,OK,Thread Group 1-1,text,true,,841,459,3,3,https://localhost:44369/api/v1/auth/exchange,106,0,0
+1694079890596,208,Exchange authorization code,200,OK,Thread Group 1-3,text,true,,841,459,3,3,https://localhost:44369/api/v1/auth/exchange,123,0,0
+1694079890774,1790,Bet broker token,200,OK,Thread Group 1-1,text,true,,1035,939,3,3,https://localhost:44369/api/v1/catalog/authenticate,1743,0,0
+1694079890772,2546,Bet broker token,200,OK,Thread Group 1-2,text,true,,1035,939,3,3,https://localhost:44369/api/v1/catalog/authenticate,2497,0,0
+1694079890807,2684,Bet broker token,200,OK,Thread Group 1-3,text,true,,1035,939,3,3,https://localhost:44369/api/v1/catalog/authenticate,2647,0,0
+1694079892565,1443,Get broker holdings,200,OK,Thread Group 1-1,text,true,,781,1077,3,3,https://localhost:44369/api/v1/holdings/get,1390,0,0
+1694079894008,259,Get Catalog link request,200,OK,Thread Group 1-1,text,true,,683,409,3,3,https://localhost:44369/api/v1/cataloglink?userId=e39aef43-26de-4097-886f-48beef5476e4&callbackUrl=http://localhost:3006,227,0,0
+1694079893492,778,Get broker holdings,200,OK,Thread Group 1-3,text,true,,781,1077,3,3,https://localhost:44369/api/v1/holdings/get,728,0,0
+1694079893320,979,Get broker holdings,200,OK,Thread Group 1-2,text,true,,781,1077,3,3,https://localhost:44369/api/v1/holdings/get,907,0,0
+1694079894270,150,Exchange authorization code,200,OK,Thread Group 1-1,text,true,,841,459,3,3,https://localhost:44369/api/v1/auth/exchange,97,0,0
+1694079894270,201,Get Catalog link request,200,OK,Thread Group 1-3,text,true,,683,409,3,3,https://localhost:44369/api/v1/cataloglink?userId=22818913-6ec8-40ff-b3ea-d7632ffe2c41&callbackUrl=http://localhost:3006,145,0,0
+1694079894300,194,Get Catalog link request,200,OK,Thread Group 1-2,text,true,,683,409,3,3,https://localhost:44369/api/v1/cataloglink?userId=a1fdb55d-add9-4165-a1cd-75973e211624&callbackUrl=http://localhost:3006,149,0,0
+1694079894473,128,Exchange authorization code,200,OK,Thread Group 1-3,text,true,,841,459,3,3,https://localhost:44369/api/v1/auth/exchange,87,0,0
+1694079894496,135,Exchange authorization code,200,OK,Thread Group 1-2,text,true,,841,459,3,3,https://localhost:44369/api/v1/auth/exchange,88,0,0
+1694079894603,1194,Bet broker token,200,OK,Thread Group 1-3,text,true,,1035,939,3,3,https://localhost:44369/api/v1/catalog/authenticate,1157,0,0
+1694079894423,1850,Bet broker token,200,OK,Thread Group 1-1,text,true,,1035,939,3,3,https://localhost:44369/api/v1/catalog/authenticate,1806,0,0
+1694079894634,1655,Bet broker token,200,OK,Thread Group 1-2,text,true,,1035,939,3,3,https://localhost:44369/api/v1/catalog/authenticate,1607,0,0
+1694079895799,1274,Get broker holdings,200,OK,Thread Group 1-3,text,true,,781,1077,3,3,https://localhost:44369/api/v1/holdings/get,1245,0,0
+1694079896290,1140,Get broker holdings,200,OK,Thread Group 1-2,text,true,,781,1077,2,2,https://localhost:44369/api/v1/holdings/get,1105,0,0
+1694079896274,1499,Get broker holdings,200,OK,Thread Group 1-1,text,true,,781,1077,1,1,https://localhost:44369/api/v1/holdings/get,1463,0,0
+1694079905536,125,Get Catalog link request,200,OK,Thread Group 1-2,text,true,,683,409,2,2,https://localhost:44369/api/v1/cataloglink?userId=8f9eea65-98c6-4dd5-8feb-db7535a6d7a1&callbackUrl=http://localhost:3006,106,0,15
+1694079905311,341,Get Catalog link request,200,OK,Thread Group 1-1,text,true,,683,409,2,2,https://localhost:44369/api/v1/cataloglink?userId=97e76c1a-1b93-4207-b9ac-98f50c8afc5f&callbackUrl=http://localhost:3006,310,0,196
+1694079905675,114,Exchange authorization code,200,OK,Thread Group 1-2,text,true,,841,459,2,2,https://localhost:44369/api/v1/auth/exchange,77,0,0
+1694079905673,118,Exchange authorization code,200,OK,Thread Group 1-1,text,true,,841,459,2,2,https://localhost:44369/api/v1/auth/exchange,79,0,0
+1694079905859,236,Get Catalog link request,200,OK,Thread Group 1-3,text,true,,683,409,3,3,https://localhost:44369/api/v1/cataloglink?userId=a45c4103-3d11-4c0f-8d1d-a5ea850717cc&callbackUrl=http://localhost:3006,205,0,13
+1694079906099,73,Exchange authorization code,200,OK,Thread Group 1-3,text,true,,841,459,3,3,https://localhost:44369/api/v1/auth/exchange,45,0,0
+1694079906176,1157,Bet broker token,200,OK,Thread Group 1-3,text,true,,1035,939,3,3,https://localhost:44369/api/v1/catalog/authenticate,1123,0,0
+1694079907337,812,Get broker holdings,200,OK,Thread Group 1-3,text,true,,781,1077,3,3,https://localhost:44369/api/v1/holdings/get,602,0,0
+1694079905823,2409,Bet broker token,200,OK,Thread Group 1-1,text,true,,1035,939,3,3,https://localhost:44369/api/v1/catalog/authenticate,2292,0,0
+1694079905823,2424,Bet broker token,200,OK,Thread Group 1-2,text,true,,1035,939,3,3,https://localhost:44369/api/v1/catalog/authenticate,2358,0,0
+1694079908150,195,Get Catalog link request,200,OK,Thread Group 1-3,text,true,,683,409,3,3,https://localhost:44369/api/v1/cataloglink?userId=979d0b03-9b0c-4a9e-aa09-d96b8dda2b9a&callbackUrl=http://localhost:3006,143,0,0
+1694079908347,130,Exchange authorization code,200,OK,Thread Group 1-3,text,true,,841,459,3,3,https://localhost:44369/api/v1/auth/exchange,102,0,0
+1694079908248,1156,Get broker holdings,200,OK,Thread Group 1-2,text,true,,781,1077,3,3,https://localhost:44369/api/v1/holdings/get,1125,0,0
+1694079909405,135,Get Catalog link request,200,OK,Thread Group 1-2,text,true,,683,409,3,3,https://localhost:44369/api/v1/cataloglink?userId=9668a877-f39d-44f8-b655-0ba5fd7b630b&callbackUrl=http://localhost:3006,108,0,0
+1694079909542,79,Exchange authorization code,200,OK,Thread Group 1-2,text,true,,841,459,3,3,https://localhost:44369/api/v1/auth/exchange,42,0,0
+1694079908234,1583,Get broker holdings,200,OK,Thread Group 1-1,text,true,,781,1077,3,3,https://localhost:44369/api/v1/holdings/get,1546,0,0
+1694079909818,92,Get Catalog link request,200,OK,Thread Group 1-1,text,true,,683,409,3,3,https://localhost:44369/api/v1/cataloglink?userId=ec40e5fc-af7b-4508-8c43-f62b01ce11df&callbackUrl=http://localhost:3006,73,0,0
+1694079909912,77,Exchange authorization code,200,OK,Thread Group 1-1,text,true,,841,459,3,3,https://localhost:44369/api/v1/auth/exchange,46,0,0
+1694079908479,2277,Bet broker token,200,OK,Thread Group 1-3,text,true,,1035,939,3,3,https://localhost:44369/api/v1/catalog/authenticate,2225,0,0
+1694079909623,1517,Bet broker token,200,OK,Thread Group 1-2,text,true,,1035,939,3,3,https://localhost:44369/api/v1/catalog/authenticate,1445,0,0
+1694079910756,539,Get broker holdings,200,OK,Thread Group 1-3,text,true,,781,1077,3,3,https://localhost:44369/api/v1/holdings/get,488,0,0
+1694079911296,134,Get Catalog link request,200,OK,Thread Group 1-3,text,true,,683,409,3,3,https://localhost:44369/api/v1/cataloglink?userId=83f1ee83-3714-4c44-b88e-fcb6ac7f7f5b&callbackUrl=http://localhost:3006,94,0,0
+1694079911433,77,Exchange authorization code,200,OK,Thread Group 1-3,text,true,,841,459,3,3,https://localhost:44369/api/v1/auth/exchange,42,0,0
+1694079909991,2245,Bet broker token,200,OK,Thread Group 1-1,text,true,,1035,939,3,3,https://localhost:44369/api/v1/catalog/authenticate,2183,0,0
+1694079911140,1373,Get broker holdings,200,OK,Thread Group 1-2,text,true,,781,1077,3,3,https://localhost:44369/api/v1/holdings/get,1336,0,0
+1694079912513,107,Get Catalog link request,200,OK,Thread Group 1-2,text,true,,683,409,3,3,https://localhost:44369/api/v1/cataloglink?userId=e45e1242-f39b-4a24-8ee5-2dd3e8cb3c81&callbackUrl=http://localhost:3006,72,0,0
+1694079912622,91,Exchange authorization code,200,OK,Thread Group 1-2,text,true,,841,459,3,3,https://localhost:44369/api/v1/auth/exchange,62,0,0
+1694079911512,1854,Bet broker token,200,OK,Thread Group 1-3,text,true,,1035,939,3,3,https://localhost:44369/api/v1/catalog/authenticate,1807,0,0
+1694079912715,889,Bet broker token,200,OK,Thread Group 1-2,text,true,,1035,939,3,3,https://localhost:44369/api/v1/catalog/authenticate,835,0,0
+1694079913367,432,Get broker holdings,200,OK,Thread Group 1-3,text,true,,781,1077,3,3,https://localhost:44369/api/v1/holdings/get,303,0,0
+1694079912236,1687,Get broker holdings,200,OK,Thread Group 1-1,text,true,,781,1077,2,2,https://localhost:44369/api/v1/holdings/get,1598,0,0
+1694079913924,106,Get Catalog link request,200,OK,Thread Group 1-1,text,true,,683,409,2,2,https://localhost:44369/api/v1/cataloglink?userId=eb3664d9-acc8-4778-9b51-f48e1b83b7f9&callbackUrl=http://localhost:3006,80,0,0
+1694079914032,76,Exchange authorization code,200,OK,Thread Group 1-1,text,true,,841,459,2,2,https://localhost:44369/api/v1/auth/exchange,45,0,0
+1694079913605,1532,Get broker holdings,200,OK,Thread Group 1-2,text,true,,781,1077,2,2,https://localhost:44369/api/v1/holdings/get,1495,0,0
+1694079914110,1734,Bet broker token,200,OK,Thread Group 1-1,text,true,,1035,939,1,1,https://localhost:44369/api/v1/catalog/authenticate,1699,0,0
+1694079915845,1058,Get broker holdings,200,OK,Thread Group 1-1,text,true,,781,1077,1,1,https://localhost:44369/api/v1/holdings/get,1020,0,0
+1694080071533,405,Get Catalog link request,200,OK,Thread Group 1-1,text,true,,683,409,2,2,https://localhost:44369/api/v1/cataloglink?userId=8c9983b5-f179-4664-9cec-bc8d516b1158&callbackUrl=http://localhost:3006,357,0,194
+1694080071738,241,Get Catalog link request,200,OK,Thread Group 1-2,text,true,,683,409,2,2,https://localhost:44369/api/v1/cataloglink?userId=7d86169e-78d8-4308-87e7-3ac2f8fc132d&callbackUrl=http://localhost:3006,206,0,16
+1694080071959,105,Exchange authorization code,200,OK,Thread Group 1-1,text,true,,841,459,2,2,https://localhost:44369/api/v1/auth/exchange,62,0,0
+1694080071982,84,Exchange authorization code,200,OK,Thread Group 1-2,text,true,,841,459,2,2,https://localhost:44369/api/v1/auth/exchange,56,0,0
+1694080072068,175,Get Catalog link request,200,OK,Thread Group 1-3,text,true,,683,409,3,3,https://localhost:44369/api/v1/cataloglink?userId=f6f47863-eaf8-44db-b3e1-1c8686a20e7f&callbackUrl=http://localhost:3006,130,0,11
+1694080072247,114,Exchange authorization code,200,OK,Thread Group 1-3,text,true,,841,459,3,3,https://localhost:44369/api/v1/auth/exchange,75,0,0
+1694080072110,987,Bet broker token,200,OK,Thread Group 1-1,text,true,,1035,939,3,3,https://localhost:44369/api/v1/catalog/authenticate,950,0,0
+1694080073101,844,Get broker holdings,200,OK,Thread Group 1-1,text,true,,781,1077,3,3,https://localhost:44369/api/v1/holdings/get,819,0,0
+1694080073946,90,Get Catalog link request,200,OK,Thread Group 1-1,text,true,,683,409,3,3,https://localhost:44369/api/v1/cataloglink?userId=ea29fbaa-44c6-44c6-9681-2372b20aced6&callbackUrl=http://localhost:3006,67,0,0
+1694080074038,61,Exchange authorization code,200,OK,Thread Group 1-1,text,true,,841,459,3,3,https://localhost:44369/api/v1/auth/exchange,39,0,0
+1694080072367,2065,Bet broker token,200,OK,Thread Group 1-3,text,true,,1035,939,3,3,https://localhost:44369/api/v1/catalog/authenticate,2011,0,0
+1694080072110,2480,Bet broker token,200,OK,Thread Group 1-2,text,true,,1035,939,3,3,https://localhost:44369/api/v1/catalog/authenticate,2444,0,0
+1694080074101,967,Bet broker token,200,OK,Thread Group 1-1,text,true,,1035,939,3,3,https://localhost:44369/api/v1/catalog/authenticate,931,0,0
+1694080074434,1380,Get broker holdings,200,OK,Thread Group 1-3,text,true,,781,1077,3,3,https://localhost:44369/api/v1/holdings/get,1351,0,0
+1694080075815,105,Get Catalog link request,200,OK,Thread Group 1-3,text,true,,683,409,3,3,https://localhost:44369/api/v1/cataloglink?userId=29d02562-4194-4531-93a4-4cf58470df18&callbackUrl=http://localhost:3006,70,0,0
+1694080075922,97,Exchange authorization code,200,OK,Thread Group 1-3,text,true,,841,459,3,3,https://localhost:44369/api/v1/auth/exchange,59,0,0
+1694080074591,1516,Get broker holdings,200,OK,Thread Group 1-2,text,true,,781,1077,3,3,https://localhost:44369/api/v1/holdings/get,1459,0,0
+1694080075069,1158,Get broker holdings,200,OK,Thread Group 1-1,text,true,,781,1077,3,3,https://localhost:44369/api/v1/holdings/get,1112,0,0
+1694080076108,168,Get Catalog link request,200,OK,Thread Group 1-2,text,true,,683,409,3,3,https://localhost:44369/api/v1/cataloglink?userId=3b9a06e9-1484-4d32-a113-9d2ba0aa4524&callbackUrl=http://localhost:3006,124,0,0
+1694080076278,90,Exchange authorization code,200,OK,Thread Group 1-2,text,true,,841,459,3,3,https://localhost:44369/api/v1/auth/exchange,54,0,0
+1694080076228,143,Get Catalog link request,200,OK,Thread Group 1-1,text,true,,683,409,3,3,https://localhost:44369/api/v1/cataloglink?userId=3b39b63e-6911-4759-a4db-2ef0d8e4bd01&callbackUrl=http://localhost:3006,94,0,0
+1694080076373,108,Exchange authorization code,200,OK,Thread Group 1-1,text,true,,841,459,3,3,https://localhost:44369/api/v1/auth/exchange,75,0,0
+1694080076484,1017,Bet broker token,200,OK,Thread Group 1-1,text,true,,1035,939,3,3,https://localhost:44369/api/v1/catalog/authenticate,968,0,0
+1694080076021,1947,Bet broker token,200,OK,Thread Group 1-3,text,true,,1035,939,3,3,https://localhost:44369/api/v1/catalog/authenticate,1892,0,0
+1694080076371,1799,Bet broker token,200,OK,Thread Group 1-2,text,true,,1035,939,3,3,https://localhost:44369/api/v1/catalog/authenticate,1725,0,0
+1694080078171,526,Get broker holdings,200,OK,Thread Group 1-2,text,true,,781,1077,3,3,https://localhost:44369/api/v1/holdings/get,481,0,0
+1694080077502,1291,Get broker holdings,200,OK,Thread Group 1-1,text,true,,781,1077,3,3,https://localhost:44369/api/v1/holdings/get,1260,0,0
+1694080078698,131,Get Catalog link request,200,OK,Thread Group 1-2,text,true,,683,409,2,2,https://localhost:44369/api/v1/cataloglink?userId=110b746a-02e7-4f16-80cb-5be8a3e723f4&callbackUrl=http://localhost:3006,99,0,0
+1694080078831,78,Exchange authorization code,200,OK,Thread Group 1-2,text,true,,841,459,2,2,https://localhost:44369/api/v1/auth/exchange,38,0,0
+1694080077969,1260,Get broker holdings,200,OK,Thread Group 1-3,text,true,,781,1077,2,2,https://localhost:44369/api/v1/holdings/get,1234,0,0
+1694080079230,94,Get Catalog link request,200,OK,Thread Group 1-3,text,true,,683,409,2,2,https://localhost:44369/api/v1/cataloglink?userId=ff3602a7-dab3-420d-875d-a49cbd561f29&callbackUrl=http://localhost:3006,71,0,0
+1694080079326,91,Exchange authorization code,200,OK,Thread Group 1-3,text,true,,841,459,2,2,https://localhost:44369/api/v1/auth/exchange,61,0,0
+1694080078911,1630,Bet broker token,200,OK,Thread Group 1-2,text,true,,1035,939,2,2,https://localhost:44369/api/v1/catalog/authenticate,1573,0,0
+1694080079419,1124,Bet broker token,200,OK,Thread Group 1-3,text,true,,1035,939,2,2,https://localhost:44369/api/v1/catalog/authenticate,1075,0,0
+1694080080543,815,Get broker holdings,200,OK,Thread Group 1-3,text,true,,781,1077,2,2,https://localhost:44369/api/v1/holdings/get,776,0,0
+1694080080543,1415,Get broker holdings,200,OK,Thread Group 1-2,text,true,,781,1077,1,1,https://localhost:44369/api/v1/holdings/get,1383,0,0
