@@ -169,26 +169,16 @@ if (matcher.find()) {
           </JSONPostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Bet broker token" enabled="true">
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&#xd;
-    &quot;Type&quot;: &quot;${BrokerType}&quot;,&#xd;
-    &quot;AuthToken&quot;: &quot;${ApiKey}&quot;,&#xd;
-    &quot;Password&quot;: &quot;{ApiSecret}&quot;&#xd;
-}</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-            </collectionProp>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetIntegrations" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
           </elementProp>
           <stringProp name="HTTPSampler.domain">${test_host}</stringProp>
           <stringProp name="HTTPSampler.port">${test_port}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
-          <stringProp name="HTTPSampler.path">api/v1/catalog/authenticate</stringProp>
-          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <stringProp name="HTTPSampler.path">api/v1/catalog/integrations</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
           <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
@@ -209,140 +199,6 @@ if (matcher.find()) {
               </elementProp>
             </collectionProp>
           </HeaderManager>
-          <hashTree/>
-          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON Assertion" enabled="true">
-            <stringProp name="JSON_PATH">$.content.status</stringProp>
-            <stringProp name="EXPECTED_VALUE">succeeded</stringProp>
-            <boolProp name="JSONVALIDATION">false</boolProp>
-            <boolProp name="EXPECT_NULL">false</boolProp>
-            <boolProp name="INVERT">false</boolProp>
-            <boolProp name="ISREGEX">true</boolProp>
-          </JSONPathAssertion>
-          <hashTree/>
-          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
-            <stringProp name="JSONPostProcessor.referenceNames">broker_access_token</stringProp>
-            <stringProp name="JSONPostProcessor.jsonPathExprs">$.content.brokerAccountTokens[0].accessToken</stringProp>
-            <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
-          </JSONPostProcessor>
-          <hashTree/>
-          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
-            <collectionProp name="UserParameters.names">
-              <stringProp name="-619855149">BrokerType</stringProp>
-            </collectionProp>
-            <collectionProp name="UserParameters.thread_values">
-              <collectionProp name="1944173310">
-                <stringProp name="79356">Okx</stringProp>
-              </collectionProp>
-            </collectionProp>
-            <boolProp name="UserParameters.per_iteration">false</boolProp>
-          </UserParameters>
-          <hashTree/>
-          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="true">
-            <stringProp name="cacheKey">true</stringProp>
-            <stringProp name="filename"></stringProp>
-            <stringProp name="parameters"></stringProp>
-            <stringProp name="script">import org.apache.commons.lang3.RandomStringUtils
-
-// Generate a random string of 20 characters
-def randomString = RandomStringUtils.randomAlphanumeric(20)
-
-// Store the random string in a JMeter variable
-
-vars.put(&quot;ApiKey&quot;, randomString);
-vars.put(&quot;ApiSecret&quot;, randomString);
-</stringProp>
-            <stringProp name="scriptLanguage">groovy</stringProp>
-          </JSR223PreProcessor>
-          <hashTree/>
-        </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Configure Tranfer to address" enabled="true">
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&#xd;
-    &quot;Type&quot;: &quot;Okx&quot;,&#xd;
-    &quot;AuthToken&quot;: &quot;${broker_access_token}&quot;,&#xd;
-     &quot;ToAddresses&quot;: [{&#xd;
-        &quot;Symbol&quot;: &quot;${selectedSymbol}&quot;,&#xd;
-        &quot;NetworkId&quot;: &quot;${selectedNetworkId}&quot;,&#xd;
-        &quot;Address&quot;: &quot;${selectedAddress}&quot; &#xd;
-    }],&#xd;
-  &quot;FromAuthToken&quot;: &quot;${broker_access_token}&quot;,&#xd;
-  &quot;FromType&quot;: &quot;Okx&quot;,&#xd;
-   &quot;Symbol&quot;: &quot;${selectedSymbol}&quot;,&#xd;
-   &quot;Amount&quot;: ${amountToTransfer}&#xd;
-}</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-            </collectionProp>
-          </elementProp>
-          <stringProp name="HTTPSampler.domain">${test_host}</stringProp>
-          <stringProp name="HTTPSampler.port">${test_port}</stringProp>
-          <stringProp name="HTTPSampler.protocol">https</stringProp>
-          <stringProp name="HTTPSampler.path">api/v1/transfers/managed/configure</stringProp>
-          <stringProp name="HTTPSampler.method">POST</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-          <boolProp name="HTTPSampler.BROWSER_COMPATIBLE_MULTIPART">false</boolProp>
-          <boolProp name="HTTPSampler.image_parser">false</boolProp>
-          <boolProp name="HTTPSampler.concurrentDwn">false</boolProp>
-          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
-          <boolProp name="HTTPSampler.md5">false</boolProp>
-          <intProp name="HTTPSampler.ipSourceType">0</intProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-            <collectionProp name="HeaderManager.headers">
-              <elementProp name="" elementType="Header">
-                <stringProp name="Header.name">Authorization</stringProp>
-                <stringProp name="Header.value">Bearer ${jwt_token}</stringProp>
-              </elementProp>
-            </collectionProp>
-          </HeaderManager>
-          <hashTree/>
-          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="true">
-            <stringProp name="scriptLanguage">groovy</stringProp>
-            <stringProp name="parameters"></stringProp>
-            <stringProp name="filename"></stringProp>
-            <stringProp name="cacheKey">true</stringProp>
-            <stringProp name="script">import java.util.Random;
-
-String[] symbols = [&quot;MATIC&quot;, &quot;ETH&quot;, &quot;SOL&quot;, &quot;BTC&quot;]
-String[] addresses = [
-    &quot;0xFad59f116A2bb22df19aE9A26b8ABD2E5EA52B8E&quot;,
-    &quot;0x5472356f1DE00BCa5D729cFb6419C44B8d4488AB&quot;,
-    &quot;ArbKwyZByRAkFDVSudX14uKHRGiWaozMGseLeRDCYGui&quot;,
-    &quot;bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh&quot;
-]
-
-String networks = [
-&quot;7436E9D0-BA42-4D2B-B4C0-8E4E606B2C12&quot;,
-&quot;E3C7FDD8-B1FC-4E51-85AE-BB276E075611&quot;,
-&quot;03DEE5DA-7398-428F-9EC2-AB41BCB271DA&quot;,
-&quot;0291810A-5947-424D-9A59-E88BB33E999D&quot;]
-
-Random random = new Random()
-int randomIndex = random.nextInt(symbols.length)
-
-String selectedSymbol = symbols[randomIndex]
-String selectedAddress = addresses[randomIndex]
-String selectedNetwork = networks[randomIndex]
-
-vars.put(&quot;selectedSymbol&quot;, selectedSymbol)
-vars.put(&quot;selectedAddress&quot;, selectedAddress)
-vars.put(&quot;selectedNetworkId&quot;, selectedNetwork)
-
-double randomDouble = 1 + random.nextDouble() * 1233
-String formattedRandomDouble = String.format(&quot;%.3f&quot;, randomDouble)
-
-double amountToTransfer = Double.parseDouble(formattedRandomDouble)
-vars.put(&quot;amountToTransfer&quot;, String.valueOf(amountToTransfer))
-</stringProp>
-          </JSR223PreProcessor>
           <hashTree/>
         </hashTree>
         <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">

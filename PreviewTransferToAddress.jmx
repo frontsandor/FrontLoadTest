@@ -63,6 +63,49 @@
           <intProp name="HTTPSampler.ipSourceType">0</intProp>
         </HTTPSamplerProxy>
         <hashTree>
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import groovy.json.JsonSlurper
+
+// Get the JSON response from the previous sampler
+def jsonResponse = prev.getResponseDataAsString()
+
+// Parse the JSON response
+def jsonSlurper = new JsonSlurper()
+def parsedJson = jsonSlurper.parseText(jsonResponse)
+
+// Access values from the JSON
+def fieldValue = parsedJson.content.url
+
+log.info(fieldValue)
+
+def regexPattern = /=(.*)/
+
+
+def matcher = (fieldValue =~regexPattern)
+
+if (matcher.find()) {
+    // Get the matched value from the regular expression
+    def matchedValue = matcher.group(0)
+
+    def substring = matchedValue[1..-1]
+    
+    // Store the matched value in a variable
+    vars.put(&quot;AUTH_CODE&quot;, substring)
+    
+    log.info(&quot;Matched value: ${matchedValue}&quot;)
+} else {
+    log.warn(&quot;No match found for the regular expression&quot;)
+}
+
+
+
+</stringProp>
+          </JSR223PostProcessor>
+          <hashTree/>
           <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
             <collectionProp name="UserParameters.names">
               <stringProp name="-1782700506">USERID</stringProp>
@@ -76,28 +119,6 @@
             </collectionProp>
             <boolProp name="UserParameters.per_iteration">false</boolProp>
           </UserParameters>
-          <hashTree/>
-          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="true">
-            <stringProp name="filename"></stringProp>
-            <stringProp name="parameters"></stringProp>
-            <boolProp name="resetInterpreter">false</boolProp>
-            <stringProp name="script">import java.util.regex.*;
-
-String responseData = prev.getResponseDataAsString();
-
-String regex = &quot;=(.*?)(?=\&quot;)&quot;;
-
-Pattern pattern = Pattern.compile(regex);
-Matcher matcher = pattern.matcher(responseData);
-
-if (matcher.find()) {
-    String matchedValue = matcher.group(1);
-
-    vars.put(&quot;AUTH_CODE&quot;, matchedValue);
-} else {
-    log.error(&quot;No match found.&quot;);
-}</stringProp>
-          </BeanShellPostProcessor>
           <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
@@ -216,23 +237,25 @@ if (matcher.find()) {
             <boolProp name="UserParameters.per_iteration">false</boolProp>
           </UserParameters>
           <hashTree/>
-          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="true">
+            <stringProp name="cacheKey">true</stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
-            <boolProp name="resetInterpreter">false</boolProp>
-            <stringProp name="script">import org.apache.commons.lang3.RandomStringUtils;
+            <stringProp name="script">import org.apache.commons.lang3.RandomStringUtils
 
-String apiKey = RandomStringUtils.randomAlphanumeric(20); 
+// Generate a random string of 20 characters
+def randomString = RandomStringUtils.randomAlphanumeric(20)
 
-log.info(&quot;APIKEY&quot; + apikey);
+// Store the random string in a JMeter variable
 
-vars.put(&quot;ApiKey&quot;, apiKey);
-vars.put(&quot;ApiSecret&quot;, apiKey);
+vars.put(&quot;ApiKey&quot;, randomString);
+vars.put(&quot;ApiSecret&quot;, randomString);
 </stringProp>
-          </BeanShellPreProcessor>
+            <stringProp name="scriptLanguage">groovy</stringProp>
+          </JSR223PreProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get broker holdings" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Preview Tranfer to address" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -240,7 +263,11 @@ vars.put(&quot;ApiSecret&quot;, apiKey);
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
     &quot;Type&quot;: &quot;Okx&quot;,&#xd;
-    &quot;AuthToken&quot;: &quot;${broker_access_token}&quot;&#xd;
+    &quot;AuthToken&quot;: &quot;${broker_access_token}&quot;,&#xd;
+    &quot;Symbol&quot;: &quot;${selectedSymbol}&quot;,&#xd;
+    &quot;Chain&quot;: &quot;${selectedChain}&quot;,&#xd;
+    &quot;TargetAddress&quot;: &quot;${selectedAddress}&quot;,&#xd;
+    &quot;Amount&quot;: ${amountToTransfer}&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
@@ -249,7 +276,7 @@ vars.put(&quot;ApiSecret&quot;, apiKey);
           <stringProp name="HTTPSampler.domain">${test_host}</stringProp>
           <stringProp name="HTTPSampler.port">${test_port}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
-          <stringProp name="HTTPSampler.path">api/v1/holdings/get</stringProp>
+          <stringProp name="HTTPSampler.path">api/v1/transfers/managed/preview</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -271,6 +298,46 @@ vars.put(&quot;ApiSecret&quot;, apiKey);
               </elementProp>
             </collectionProp>
           </HeaderManager>
+          <hashTree/>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.util.Random;
+
+String[] symbols = [&quot;MATIC&quot;, &quot;ETH&quot;, &quot;SOL&quot;, &quot;BTC&quot;]
+String[] addresses = [
+    &quot;0xFad59f116A2bb22df19aE9A26b8ABD2E5EA52B8E&quot;,
+    &quot;0x5472356f1DE00BCa5D729cFb6419C44B8d4488AB&quot;,
+    &quot;ArbKwyZByRAkFDVSudX14uKHRGiWaozMGseLeRDCYGui&quot;,
+    &quot;bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh&quot;
+]
+
+String chains = [
+&quot;&quot;,
+&quot;&quot;,
+&quot;&quot;,
+&quot;&quot;]
+
+Random random = new Random()
+int randomIndex = random.nextInt(symbols.length)
+
+String selectedSymbol = symbols[randomIndex]
+String selectedAddress = addresses[randomIndex]
+String selectedChain = chains[randomIndex]
+
+vars.put(&quot;selectedSymbol&quot;, selectedSymbol)
+vars.put(&quot;selectedAddress&quot;, selectedAddress)
+vars.put(&quot;selectedChain&quot;, selectedChain)
+
+double randomDouble = 1 + random.nextDouble() * 1233
+String formattedRandomDouble = String.format(&quot;%.3f&quot;, randomDouble)
+
+double amountToTransfer = Double.parseDouble(formattedRandomDouble)
+vars.put(&quot;amountToTransfer&quot;, String.valueOf(amountToTransfer))
+</stringProp>
+          </JSR223PreProcessor>
           <hashTree/>
         </hashTree>
         <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
@@ -439,6 +506,43 @@ vars.put(&quot;ApiSecret&quot;, apiKey);
             </value>
           </objProp>
           <stringProp name="filename">C:\apache-jmeter-5.6.2\bin\testResult.jtl</stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
       </hashTree>

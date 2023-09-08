@@ -255,7 +255,7 @@ vars.put(&quot;ApiSecret&quot;, randomString);
           </JSR223PreProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Configure Tranfer to address" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get symbol details" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -264,15 +264,7 @@ vars.put(&quot;ApiSecret&quot;, randomString);
                 <stringProp name="Argument.value">{&#xd;
     &quot;Type&quot;: &quot;Okx&quot;,&#xd;
     &quot;AuthToken&quot;: &quot;${broker_access_token}&quot;,&#xd;
-     &quot;ToAddresses&quot;: [{&#xd;
-        &quot;Symbol&quot;: &quot;${selectedSymbol}&quot;,&#xd;
-        &quot;NetworkId&quot;: &quot;${selectedNetworkId}&quot;,&#xd;
-        &quot;Address&quot;: &quot;${selectedAddress}&quot; &#xd;
-    }],&#xd;
-  &quot;FromAuthToken&quot;: &quot;${broker_access_token}&quot;,&#xd;
-  &quot;FromType&quot;: &quot;Okx&quot;,&#xd;
-   &quot;Symbol&quot;: &quot;${selectedSymbol}&quot;,&#xd;
-   &quot;Amount&quot;: ${amountToTransfer}&#xd;
+    &quot;Symbol&quot;: &quot;${selectedSymbol}&quot;&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
@@ -281,7 +273,7 @@ vars.put(&quot;ApiSecret&quot;, randomString);
           <stringProp name="HTTPSampler.domain">${test_host}</stringProp>
           <stringProp name="HTTPSampler.port">${test_port}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
-          <stringProp name="HTTPSampler.path">api/v1/transfers/managed/configure</stringProp>
+          <stringProp name="HTTPSampler.path">api/v1/transfers/symbol/details</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -312,35 +304,13 @@ vars.put(&quot;ApiSecret&quot;, randomString);
             <stringProp name="script">import java.util.Random;
 
 String[] symbols = [&quot;MATIC&quot;, &quot;ETH&quot;, &quot;SOL&quot;, &quot;BTC&quot;]
-String[] addresses = [
-    &quot;0xFad59f116A2bb22df19aE9A26b8ABD2E5EA52B8E&quot;,
-    &quot;0x5472356f1DE00BCa5D729cFb6419C44B8d4488AB&quot;,
-    &quot;ArbKwyZByRAkFDVSudX14uKHRGiWaozMGseLeRDCYGui&quot;,
-    &quot;bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh&quot;
-]
-
-String networks = [
-&quot;7436E9D0-BA42-4D2B-B4C0-8E4E606B2C12&quot;,
-&quot;E3C7FDD8-B1FC-4E51-85AE-BB276E075611&quot;,
-&quot;03DEE5DA-7398-428F-9EC2-AB41BCB271DA&quot;,
-&quot;0291810A-5947-424D-9A59-E88BB33E999D&quot;]
 
 Random random = new Random()
 int randomIndex = random.nextInt(symbols.length)
 
 String selectedSymbol = symbols[randomIndex]
-String selectedAddress = addresses[randomIndex]
-String selectedNetwork = networks[randomIndex]
 
 vars.put(&quot;selectedSymbol&quot;, selectedSymbol)
-vars.put(&quot;selectedAddress&quot;, selectedAddress)
-vars.put(&quot;selectedNetworkId&quot;, selectedNetwork)
-
-double randomDouble = 1 + random.nextDouble() * 1233
-String formattedRandomDouble = String.format(&quot;%.3f&quot;, randomDouble)
-
-double amountToTransfer = Double.parseDouble(formattedRandomDouble)
-vars.put(&quot;amountToTransfer&quot;, String.valueOf(amountToTransfer))
 </stringProp>
           </JSR223PreProcessor>
           <hashTree/>
